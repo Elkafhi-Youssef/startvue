@@ -1,7 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App" url="you code "/> -->
-  <h1> hi {{name}}</h1>
+  <h1> hi {{add()}}</h1>
   <h2 v-html="greate"></h2>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     return{
       greate:"<b>youssef</b>",
       name:"youssef"
+    }
+  },
+  methods:{
+    add(){
+      return 1+2;
     }
   }
 }
