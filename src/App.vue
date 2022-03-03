@@ -5,10 +5,12 @@
   <!-- <h2 v-html="greate"></h2> -->
   <h1> {{fullname}}</h1>
   <h1> convert MAD USD</h1>
-  <label >mad</label>
-  <input type="number"   v-model="mad">
-  <label >usd</label>
-  <input type="number"   v-model="usd">
+  <label >Hour</label>
+  <input type="number"   v-model="h">
+  <label >minute</label>
+  <input type="number"   v-model="m">
+  <label >second</label>
+  <input type="number"   v-model="s">
 </template>
 
 <script>
@@ -20,8 +22,9 @@ export default {
     return{
      first:'youssef',
      last:'elkafhi',
-    mad:0,
-    usd:0
+    h :0,
+    m:0,
+    s:0,
 
     }
   },
@@ -36,12 +39,19 @@ export default {
     }
   },
   watch:{
-    mad(v){
-      this.usd = v/10;
+    h(v){
+      this.m = v*60;
+      this.s = v*60*60;
+    }, 
+    m(v){
+      this.h = v/60;
+      this.s = v*60;
     },
-     usd(v){
-      this.mad = v*10;
-    }
+     s(v){
+      this.m = v/60;
+      this.h = v/3600;
+    },
+    
   }
 }
 </script>
