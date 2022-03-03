@@ -4,6 +4,11 @@
   <!-- <h1> hi {{add()}}</h1> -->
   <!-- <h2 v-html="greate"></h2> -->
   <h1> {{fullname}}</h1>
+  <h1> convert MAD USD</h1>
+  <label >mad</label>
+  <input type="number"   v-model="mad">
+  <label >usd</label>
+  <input type="number"   v-model="usd">
 </template>
 
 <script>
@@ -14,7 +19,10 @@ export default {
   data(){
     return{
      first:'youssef',
-     last:'elkafhi'
+     last:'elkafhi',
+    mad:0,
+    usd:0
+
     }
   },
   methods:{
@@ -25,6 +33,14 @@ export default {
   computed:{
     fullname(){
       return `${this.first}`
+    }
+  },
+  watch:{
+    mad(v){
+      this.usd = v/10;
+    },
+     usd(v){
+      this.mad = v*10;
     }
   }
 }
