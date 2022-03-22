@@ -4,27 +4,32 @@
     <!-- <Greet :name="first" heroName="batman" />
     <Greet name="abdo" heroName="batman1"/>
     <Greet name="zaynab" heroName="batman2" /> -->
-    <ComponentC />
+    <!-- <ComponentC /> -->
+    <button @click="showPopup = true">Show Popup</button>
+    <Popup v-show="showPopup" @close="closePopup"/>
     
     
   </div>
 </template>
 
 <script>
-// import Greet from "./components/Greet.vue";
-import ComponentC from "./components/ComponentC.vue";
+import Popup from "./components/Popup.vue";
+// import ComponentC from "./components/ComponentC.vue";
 
 export default {
   name: "App",
-  components:{ComponentC},
+  components:{Popup},
   data() {
     return {
-      first: "youssef",
+      showPopup:false
       
     };
   },
   methods: {
-    
+    closePopup(n){
+      this.showPopup = false
+     console.log('name',n);
+    }
   },
   computed: {
     
