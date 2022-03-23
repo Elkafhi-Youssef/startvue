@@ -1,15 +1,17 @@
 <template>
   <div>
-  <Input v-model="name"/>
+    <CreatePost/>
+  <post-list/>
   </div>
 </template>
 
 <script>
-import Input from "./components/Input.vue";
+import PostList from "./components/PostList.vue";
+import CreatePost from "./components/CreatePost.vue";
 
 export default {
   name: "App",
-  components:{Input},
+  components:{PostList,CreatePost},
   data() {
     return {
       name:'',

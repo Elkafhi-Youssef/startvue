@@ -9,7 +9,6 @@
     name:'Input-com',
     data(){
       return {
-    
       }
     },
     props:{
