@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="getPosts">Load posts</button>
+    
     <div v-for="post in posts" :key="post.id">
     <h3>{{post.id}}.{{post.title}}</h3>
     <p>{{post.body}}</p>
@@ -19,6 +19,9 @@ import axios from 'axios'
         posts:[],
         errormessage:''
       }
+    },
+    created(){
+      this.getPosts()
     },
     methods:{
       getPosts(){
