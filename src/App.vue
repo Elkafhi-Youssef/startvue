@@ -1,44 +1,27 @@
 <template>
   <div>
-   <!-- <Article title="myarticle"/> -->
-    <!-- <Greet :name="first" heroName="batman" />
-    <Greet name="abdo" heroName="batman1"/>
-    <Greet name="zaynab" heroName="batman2" /> -->
-    <!-- <ComponentC /> -->
-    <button @click="showPopup = true">Show Popup</button>
-    <Popup v-show="showPopup" @close="closePopup"/>
-    
-    
+  <Input v-model="name"/>
   </div>
 </template>
 
 <script>
-import Popup from "./components/Popup.vue";
-// import ComponentC from "./components/ComponentC.vue";
+import Input from "./components/Input.vue";
 
 export default {
   name: "App",
-  components:{Popup},
+  components:{Input},
   data() {
     return {
-      showPopup:false
-      
+      name:'',
     };
   },
   methods: {
-    closePopup(n){
-      this.showPopup = false
-     console.log('name',n);
-    }
   },
   computed: {
-    
   },
   watch: {
-    
   },
   provide:{
-    username:'sajoselva'
   }
 };
 </script>
